@@ -1,6 +1,7 @@
 <h1>@Model.GetName()</h1>
-<p>@Model.GetFood()</p>
-<p>@Model.GetAttention()</p>
-<p>@Model.GetRest()</p>
-<a href='/places/new'>Add another place</a>
-<a href='/view_all_places'>View all places</a>
+<p>Food: @Model.GetFood() <form method="post" action="/tamagotchis/food/@Model.GetId()"><button type="submit" name="button">Feed me!</button></form></p>
+<p>Attention: @Model.GetAttention() <form method="post" action="/tamagotchis/attention/@Model.GetId()"><button type="submit" name="button">Play with me!</button></form></p>
+<p>Rest: @Model.GetRest() <form method="post" action="/tamagotchis/rest/@Model.GetId()"><button type="submit" name="button"> Put me to sleep! Zzzzz!</button></form></p>
+
+<a href='/tamagotchis/new'>Add another pet</a>
+<a href='/'>View all Tamagotchis</a>

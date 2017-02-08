@@ -3,7 +3,7 @@ using Tamagotchis.Objects;
 using System.Collections.Generic;
 
 
-namespace Tamagotchi
+namespace Tamagotchis
 {
   public class HomeModule : NancyModule
   {
@@ -22,6 +22,24 @@ namespace Tamagotchi
        Tamagotchi tamagotchi = Tamagotchi.Find(parameters.id);
        return View["tamagotchi.cshtml", tamagotchi];
      };
+
+      Post["/tamagotchis/food/{id}"] = parameters => {
+        Tamagotchi tamagotchi = Tamagotchi.Find(parameters.id);
+        tamagotchi.AddFood();
+        return View["tamagotchi.cshtml", tamagotchi];
+      };
+
+      Post["/tamagotchis/attention/{id}"] = parameters => {
+        Tamagotchi tamagotchi = Tamagotchi.Find(parameters.id);
+        tamagotchi.AddAttention();
+        return View["tamagotchi.cshtml", tamagotchi];
+      };
+
+      Post["/tamagotchis/rest/{id}"] = parameters => {
+        Tamagotchi tamagotchi = Tamagotchi.Find(parameters.id);
+        tamagotchi.AddRest();
+        return View["tamagotchi.cshtml", tamagotchi];
+      };
 
       Post["/"] = _ => {
         Tamagotchi newTamagotchi = new Tamagotchi(Request.Form["new-pet"]);

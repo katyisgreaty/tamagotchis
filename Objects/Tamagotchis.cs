@@ -50,7 +50,23 @@ namespace Tamagotchis.Objects
       return _id;
     }
 
+    public int AddFood()
+    {
+      return _food += 10;
+    }
+
+    public int AddAttention()
+    {
+      return _attention += 10;
+    }
+
+    public int AddRest()
+    {
+      return _rest += 10;
+    }
+
 // instances
+
 
     public static List<Tamagotchi> GetAll()
     {
@@ -62,7 +78,7 @@ namespace Tamagotchis.Objects
       _instances.Clear();
     }
 
-    public static Place Find(int searchId)
+    public static Tamagotchi Find(int searchId)
     {
       return _instances[searchId-1];
     }
