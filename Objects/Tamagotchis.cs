@@ -50,19 +50,25 @@ namespace Tamagotchis.Objects
       return _id;
     }
 
-    public int AddFood()
+    public void AddFood()
     {
-      return _food += 10;
+      this._food += 10;
+      this._attention -= 5;
+      this._rest -= 5;
     }
 
-    public int AddAttention()
+    public void AddAttention()
     {
-      return _attention += 10;
+      this._attention += 10;
+      this._food -= 5;
+      this._rest -= 5;
     }
 
-    public int AddRest()
+    public void AddRest()
     {
-      return _rest += 10;
+      this._rest += 10;
+      this._attention -= 5;
+      this._food -= 5;
     }
 
 // instances
