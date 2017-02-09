@@ -71,6 +71,19 @@ namespace Tamagotchis.Objects
       this._food -= 5;
     }
 
+    public bool IsDead()
+    {
+      if ((this._food <= 0) || (this._attention <= 0) || (this._rest <= 0))
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+
+
 // instances
 
 
